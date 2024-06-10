@@ -1,5 +1,5 @@
 //clienteController.js
-const Salas = require('../models/alocacoesModel');
+const Salas = require('../models/salasModel');
 // Controlador para obter todos os clientes
 exports.getSalas = (req, res) => {
     Salas.getSalas((err, salas) => {
