@@ -10,7 +10,10 @@ const salasController = require('../controllers/salasController');
 router.get('/alocacoes', alocacoesController.getAlocacoes);
 
 // Rota para obter um único cliente pelo ID
-router.get('/detalhes/:id', detalhesController.getDetalhes);
+router.get('/detalhes', detalhesController.getAllDetalhes);
+
+// Rota para obter um único cliente pelo ID
+router.get('/detalhes/:id', detalhesController.getDetalhe);
 
 // Rota para criar um novo cliente
 router.get('/professores', professoresController.getProfessores);

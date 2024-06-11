@@ -11,7 +11,15 @@ function openDbConnection() {
     return db;
 }
 // Função para buscar todos os clientes
-function getDetalhes(id, callback) {
+function getAllDetalhes( callback) {
+    const db = openDbConnection();
+    db.all("SELECT * FROM Detalhes", [], (err, rows) => {
+        db.close();
+        callback(err, rows);
+    });
+}
+
+function getDetalhe(id, callback) {
     const db = openDbConnection();
     db.all("SELECT * FROM Detalhes WHERE id_prof = ?", [id], (err, rows) => {
         db.close();
@@ -20,5 +28,6 @@ function getDetalhes(id, callback) {
 }
 
 module.exports = {
-    getDetalhes
+    getAllDetalhes,
+    getDetalhe
 };
