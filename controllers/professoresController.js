@@ -6,7 +6,7 @@ exports.getProfessores = (req, res) => {
         if (err) {
             res.status(500).send(err);
         } else {
-            res.json(detalhes);
+            res.json(professores);
         }
     });
 };
