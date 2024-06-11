@@ -2,7 +2,9 @@
 const Detalhes = require('../models/detalhesModel');
 // Controlador para obter todos os clientes
 exports.getDetalhes = (req, res) => {
-    Detalhes.getDetalhes((err, detalhes) => {
+    const id  = req.params.id;
+
+    Detalhes.getDetalhes(id, (err, detalhes) => {
         if (err) {
             res.status(500).send(err);
         } else {
